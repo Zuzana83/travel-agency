@@ -5,15 +5,24 @@
         margin-bottom: 1rem;
     }
 
+    &--t-padding {
+      padding-top: 80px;
+    }
+
     @mixin atMedium {
         &--gutters > div:not(:last-child) {
             padding-right: 65px;
+            border: 1px solid yellow;
      }
 
-        &--gutters-large div:not(:last-child) {
-            padding-right: 100px;
-     }
-    
+      &--gutters-large > div:nth-child(odd) {
+        padding-right: 50px;
+      }
+
+      &--gutters-large > div:nth-child(even) {
+        padding-left: 50px;
+      }
+
         &__b-margin-until-medium {
         margin-bottom: 0;
      }
@@ -39,6 +48,72 @@
     
         &__medium-8--smaller {
         width: 63%;
+    }
+  }
+
+@mixin atLarge {
+    &--gutters > div:not(:last-child) {
+        padding-right: 65px;
+ }
+
+  &--gutters-large > div:nth-child(odd) {
+    padding-right: 50px;
+  }
+
+  &--gutters-large > div:nth-child(even) {
+    padding-left: 50px;
+  }
+
+  &--gutters-small > div:not(:last-child) {
+    padding-right: 45px;
+  }
+
+    &__b-margin-until-medium {
+    margin-bottom: 0;
+ }
+
+    &__large-4 {
+      float: left;
+      width: 33.33%;
+  }
+
+    &__large-4--larger {
+      width: 37%;
+  }
+
+    &__large-6 {
+      float: left;
+      width: 50%; 
+  }
+
+    &__large-8 {
+    float: left;
+    width: 66.66%;
+  }
+
+    &__large-8--smaller {
+    width: 63%;
+  }
+}
+
+  /* Begin equal height rule */
+  &--equal-height-at-medium {
+    @mixin atMedium {
+      display: flex;
+    }
+
+    & > div {
+      display: flex
+    }
+  }
+
+  &--equal-height-at-large {
+    @mixin atLarge {
+      display: flex;
+    }
+
+    & > div {
+      display: flex
     }
   }
 }
