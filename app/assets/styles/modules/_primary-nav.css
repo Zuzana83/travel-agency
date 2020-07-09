@@ -1,0 +1,52 @@
+.primary-nav {
+    padding-top: 10px; 
+    
+    @mixin atMedium {
+        padding-top: 0;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        @mixin clearFix
+    }
+
+    li:not(:last-child) {
+        padding-right: 7px;
+    }
+
+    li {
+        display: inline-block;
+
+        @mixin atMedium {
+            float: left;
+            display: block;
+            padding-right: 20px;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        display: inline-block;
+        color: #fff;
+        padding: 5px 8px;
+        font-size: 0.8rem;
+        background-color: rgba($mainBlue, 0.5);
+        
+
+        @mixin atMedium {
+            padding: 12px 0;
+            font-size: 1rem;
+            background-color: transparent;
+        }
+    }
+
+    &--pull-right {
+        
+        @mixin atMedium {
+            float: right;
+        }
+    }
+}
